@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6780737a-e1e8-4b35-91e6-2529ac3a6c74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/PythonLexiconDanielJaderberg.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/intropython.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Classes and Object-oriented Programming in Python 3/classes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lesson3TeacherLabs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lesson6Copy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab6.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson6.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson7.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson7lab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson7teachercode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +37,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2wlUtc7NWUTyJIDId7sKsjxBmVj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -39,7 +48,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.Lesson3TeacherLabs.executor": "Run",
+    "Python.classes.executor": "Run",
     "Python.intropython.executor": "Run",
+    "Python.lab2.executor": "Run",
+    "Python.lab3.executor": "Run",
+    "Python.lab4.executor": "Run",
+    "Python.lab5.executor": "Run",
+    "Python.lab6.executor": "Run",
+    "Python.lesson3.executor": "Run",
+    "Python.lesson4.executor": "Run",
+    "Python.lesson5.executor": "Run",
+    "Python.lesson6.executor": "Run",
+    "Python.lesson7.executor": "Run",
+    "Python.lesson7teachercode.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master"
