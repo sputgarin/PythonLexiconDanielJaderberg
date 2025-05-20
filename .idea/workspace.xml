@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6780737a-e1e8-4b35-91e6-2529ac3a6c74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/formatter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_funcs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZooSimulation/Animals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZooSimulation/Visitors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZooSimulation/ZooMain.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson8.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson8lab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/overridPolynDuck.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson7.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson7.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson7lab.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson7lab.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Lesson3TeacherLabs.executor": "Run",
+    "Python.ZooMain.executor": "Run",
     "Python.classes.executor": "Run",
     "Python.formatter.executor": "Run",
     "Python.intropython.executor": "Run",
