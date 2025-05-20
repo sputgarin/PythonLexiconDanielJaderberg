@@ -94,6 +94,11 @@ from math import sqrt as sq
 
 print(sq(25)) # Use an alias for sqrt.
 
+# Import everything, should be avoided since it creates pollution, name conflicts may occur.
+from math import *
+print(sqrt(25))
 
+from my_funcs import adder
 
+print(adder(1,2))
 

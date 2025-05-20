@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6780737a-e1e8-4b35-91e6-2529ac3a6c74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Classes and Object-oriented Programming in Python 3/classes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lesson3TeacherLabs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lesson6Copy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab6.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson6.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson7.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson7lab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson7teachercode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/formatter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_funcs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson7.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson7lab.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson7lab.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +40,7 @@
   "keyToString": {
     "Python.Lesson3TeacherLabs.executor": "Run",
     "Python.classes.executor": "Run",
+    "Python.formatter.executor": "Run",
     "Python.intropython.executor": "Run",
     "Python.lab2.executor": "Run",
     "Python.lab3.executor": "Run",
@@ -61,7 +52,9 @@
     "Python.lesson5.executor": "Run",
     "Python.lesson6.executor": "Run",
     "Python.lesson7.executor": "Run",
+    "Python.lesson7lab.executor": "Run",
     "Python.lesson7teachercode.executor": "Run",
+    "Python.test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master"
