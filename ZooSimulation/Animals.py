@@ -10,6 +10,8 @@ class Animals:
         self.hunger = hunger
         self.happiness = happiness
         self.energy = energy
+        self.dead = False
+
 
     def make_sound(self):
         return f"The animal makes an audible sound."
@@ -21,7 +23,9 @@ class Animals:
         return f"The animal is sleeping"
 
     def is_dead(self):
-        return self.hunger <= 0
+        if self.hunger <= 0 and not self.dead:
+            self.dead = True
+        return self.dead
 
 class Herbivore(Animals):
     def __init__(self, name,age, hunger, happiness,energy):
@@ -45,7 +49,7 @@ class Giraffe(Herbivore):
         super().__init__(name,age, hunger,happiness,energy=100)
         self.animal_type = "Giraffe"
     def make_sound(self):
-        return(f"Giraffe makes a Giraffe sound!\nI don't know what sounds they make! DO YOU?")
+        return(f"Giraffe makes a Giraffe sound something like hmmmmm.")
 
     def eat(self):
         return f"The Giraffe is eating the leaves your park attendants left on the ground"

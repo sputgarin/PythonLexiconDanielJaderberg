@@ -12,27 +12,42 @@ visitors = [
 ]
 
 zoo = [
-    Animals.Giraffe("Mr Tallneck", 5,50, 50),
+    Animals.Giraffe("Mr Tallneck", 5,10, 50),
     Animals.Lion("Mufasa! The Childhood trauma", 10,50, 50),
     Animals.Antilope("Antiprey", 12,50,50),
     Animals.Tiger("Shere Khan", 9,50,50)
     ]
 
+def percentage_chance(chance):
+    return random.randint(1,100) <= chance
 
-def name_zoo(zoo_name):
-    zoo_name = input("Please input a innovative name for your Zoo that will awe-strike your visitors.\n")
-    return zoo_name
-
+def name_zoo():
+    while True:
+        zoo_name = input("Please input a innovative name for your Zoo that will awe-strike your visitors.\n").strip()
+        if zoo_name:
+            return zoo_name
+        else:
+            print("-----------------------------------------------------")
+            print("That's not a valid name. Try something that contains actual characters or numbers.")
+            print("-----------------------------------------------------")
 def start_game():
+    print("")
+    print("-----------------------------------------------------")
     print(f"Welcome to the first day of ZooSimulator!\n"
-          f"Choosing animal care as your profession was \"obviously\" the right career path for you!\n")
+          f"Choosing animal care as your profession was \"obviously\" the right career path for you!")
+    print("-----------------------------------------------------")
 
-def hunger_during_night(zoo):
+def during_night(zoo):
+    print("-----------------------------------------------------")
     print("The animals get hungry during the night!")
     for animal in zoo:
+        if animal.is_dead():
+            continue
         animal.hunger -= 30
+        animal.energy += 30
 
 def day_start(zoo):
+    print("-----------------------------------------------------")
     print(f"It's the start of day: {day}")
     if day == 2:
         print("So how is this life of monotonous animal care treating you? Are you bored yet?")
@@ -56,31 +71,43 @@ def day_start(zoo):
         print("Reality is merely an illusion, albeit a very persistent one. Like the animals in your zoo!")
 
     if day == 9:
-        print("Just stop giving them food already... Starvation is just a concept... Just say they died of multi related organ failures.")
+        print("Just stop giving them food already... Starvation is just a concept... Just say they died of multiple organ failure.")
 
 
 
 def zoo_personnel_interaction():
+
     global game_over
     done = False
     while not done:
-        player_choice = input(f"Please choose an interaction for your personnel: [F]eed, [P]lay,[R]elease, [D]one")
+        print("-----------------------------------------------------")
+        player_choice = input(f"Please choose an interaction for your personnel: [F]eed, [P]lay,[R]elease, [D]one\n")
         if player_choice.lower() in ["f", "p", "d", "r"]:
             if player_choice == "f":
                 for animal in zoo:
-                    if animal.hunger >= 100:
+                    if animal.is_dead():
+                        print(f"The animal {animal.name} is dead you can't feed a dead animal.")
+                    elif animal.hunger >= 100:
                         print(f"The animal: {animal.name} is already full! Stop feeding it!")
-                        animal_status()
+
                     else:
-                        animal.hunger += 10
-                        animal_status()
+                        animal.hunger = min(100, animal.hunger + 10)
+                        animal.energy -= 10
+                animal_status()
+
             if player_choice == "p":
                 for animal in zoo:
-                    if animal.happiness >= 100:
+                    if animal.is_dead():
+                        print(f"The animal {animal.name} is dead. You can't play a dead animal.")
+                    elif animal.happiness >= 100:
                         print(f"The animal: {animal.name} is already happy enough! Stop bothering it!")
+                    elif animal.energy <= 0:
+                        print(f"The animal: {animal.name} is too tired to play! Stop bothering it!")
                     else:
                         animal.happiness += 10
-                        animal_status()
+                        animal.energy -= 10
+                animal_status()
+
             if player_choice == "d":
                 done = True
 
@@ -89,14 +116,17 @@ def zoo_personnel_interaction():
                       f"You will probably spend the rest of your life in a dark hole for doing this!\n"
                       f"GAME OVER!")
                 game_over=True
-                exit(666)
+                return
 
         else:
             print("Incorrect input! Try again!")
 
 
 def visitor_interaction(zoo, visitors):
-    print(f"The visitors interacts with your animal:\n")
+    global game_over
+    print("-----------------------------------------------------")
+    print(f"The visitors interacts with your animals:")
+    print("-----------------------------------------------------")
     # Make my visitors do one interaction each
     for visitor in visitors: # add a choice for each visitor
         alive_animals = [animal for animal in zoo if not animal.is_dead()]
@@ -105,11 +135,12 @@ def visitor_interaction(zoo, visitors):
             return
 
         visitor_choice = random.randint(0,3)
-        animal = random.choice(zoo)
+        animal = random.choice(alive_animals)
         if visitor_choice == 0:
             if animal.hunger < 100:
                 visitor.happiness += 10
-                animal.hunger += 10
+                animal.hunger = min(100, animal.hunger + 10)
+                animal.energy -= 10
                 print(f"{visitor.feed_animal(animal.name)}")
 
             else:
@@ -119,21 +150,70 @@ def visitor_interaction(zoo, visitors):
             print(f"{visitor.look_at_animal(animal.name)}")
 
         elif visitor_choice == 2:
-            if animal.animal_type == "Tiger":
-                print(f"The tiger {animal.name}just bit a visitor! You will never financially recover from this!")
-                quit(666)
+            if animal.animal_type == "Tiger" and percentage_chance(30):
+                print(f"{visitor.look_at_animal(animal.name)}")
+                print(f"The tiger {animal.name} just bit the hand off visitor: {visitor.name}\n"
+                      f"You will never financially recover from this!")
+                print("--------------\n"
+                      "| GAME OVER! |\n"
+                      "--------------")
+                '''
+                                            .e@$$$$$$$eeeu=~=._
+                                         zd$$$$$$$$$$$$$$'   z$b..  _,x,
+                                      z????$$$$$$$$P",-==   dP""`$$$.  .;
+                                   .e"..     `"?$Fu^'e$$$$$be.   )$$' 4r'$$nn,     _. -
+                                 ud$$$P  zeeeu.   ld$$$$$$$$$$$$c`=._,$$  &lt;"$$$$= '
+                               z$$$$$$e ?$$"   "FE=e2R$$$$$$$$$$$$bu"h._..d. "`nMb`    _
+                            .-J$$$$$$$$,?$$b,.,J",xc3$$$$$$$$$$$$$$$" Mh. "  'MMMMP- ~
+                       ..ze$F R$$$$$$$$$bcccd$$"J(&lt;!i`"?$$$$$$$$$$$"i'MMP .-=^,xn'.T
+                 z$$$$$$$$$4.  ,ce$$$$$$$$$$$P'dMM `!!!i;,.`"""""`,i  MMx?xr?PTTT%'r
+                 $"..z .x"F"?$$$$$$$$$$$$$$$F.MMMMM.`!!''"!!!!!!! !! xMMMMMn PTM&gt;T-
+                 "b".nMMP'b.   "",c$$$$$$$$P.MMMMMMMb.&lt;       )!! &gt;'dMMMMMMM  __
+                  .HMMMM  "??$$$$$PF"uPF",, umnmnHMMMMMbx.... ''.n'MMMMMCund~    `~ ~ -
+                 'M'HMMMh         .e$ee$$?7 MMMMMT"",MMMMMMMMMMMMM.MMMMMMMMM
+                   MMMMMMMx -...e$$$P??,nMM "`,nndMMMMMMMMMMMMMMMMk`MMMMMMMP
+                  H"MMMMMMMMhx???",nHMMP",nh MMMMMM?MP"xHMMMMMMMMMF-?TMMMM"
+                    MMPTMMMMMMMMMMP"u- :n.`"%'MF.xnF.nMMMMMMMMMP".::::."Te
+                   'M".MPTMMMMMP"zeEeP.MMMMM"..4MF,HMMMMMMMMMF'.::::::::`R.
+                    " MF dMMMf z$$$$$ MMMF'xMMMr`HMMMMMMMMM".:::::::.::...?_
+                      T  M P  $$$$$$%dMF'dMMMM"xk'MPJMMMMP ::'.'';i!!!!'`^.xhMmx
+                        'M   4$$$$$P.P,HMMMMM,HMMh TMMMMM&gt; :!!!!!!!'`.xnMMMMMMMMMn
+                             J$$$$$ ",MMMMMM,MMMM'h TMMMML'!;!!!`.nHMMMMMMMMMMMMMMMn
+                             $$$$$P HMMMMMM,MMMM MMM."MMMM !i`.HMMMMMMMMMMMMMMMMMMMMr
+                             $$$$$"dMMMMMMMMMMMfdMMMM.`MMMh   xMMMMMMMMMMMMMMMMMMMMMMM
+                            4$$$$$ MMMMMMMMMMMMMMMMMMMx`MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM'
+                           ,4$$$$$.MMMMMMMMMMMMMMMMMMMMh TMMMMMMMMMMMMMMMMMMMMMMMMMMMf
+                          ; J$$$$F;MMMMMMMMMMMMMMMMMMMMMM."MMMMMMMMMMMMMMMMMMMMMMP""
+                        .db $$$$$ MMMMMMMMMMMMMMMMMMMMMMMMh."MMMMMMMMMMMMMMPF"
+                       , d$b$$$$$ MMMMMMMMMMMMMMMMMMMMMMMMMM u"?f""?=
+                      .  $$$$$$$$ MMMMMMMMMMMMMMMMMMMMMMMMMfJ$b
+                     z$  d$$$$$$$ MMMMMMMMMMMMMMMMMMMMMMMMM P" `
+                    e$$h ?$$$$$$$ MMMMMMMMMMMMMMMMMMMMMMMMf^  zF`.
+                '''
+
+                game_over = True
+                return
             if animal.happiness < 100:
                 visitor.happiness += 10
                 animal.happiness += 10
+                animal.energy -= 10
                 print(f"{visitor.pet_animal(animal.name)}")
+            elif animal.energy <= 0:
+                print(f"{visitor.pet_animal(animal.name)}, The animal: {animal.name} is not interested.")
 
             else:
                 print(f"{visitor.pet_animal(animal.name)}, The animal: {animal.name} is not interested.")
-
+        elif visitor_choice == 3:
+            print("The visitor aimlessly walks around contemplating life.")
 
 def animal_interaction(zoo):
+    print("-----------------------------------------------------")
+    print(f"The Animals go about their business")
+    print("-----------------------------------------------------")
     for animal in zoo:
-        animal_choice = random.randint(0, 1)
+        if animal.is_dead():
+            continue
+        animal_choice = random.randint(0, 2)
         if animal_choice == 0:
             print(animal.make_sound())
         if animal_choice == 1:
@@ -145,24 +225,34 @@ def animal_interaction(zoo):
 
 
 def animal_status():
+    print("-----------------------------------------------------")
     for animal in zoo:
-        print(
-            f"Name: {animal.name}, Age: {animal.age}, hunger: {animal.hunger}, Happiness: {animal.happiness}, Energy: {animal.energy}")
-        if animal.hunger <= 0:
+        if animal.is_dead():
             print(f"Animal: {animal.name} is dead, Great job zookeeper")
+        else:
+            print(
+            f"Name: {animal.name},  Type: {animal.animal_type}, Age: {animal.age}, hunger: {animal.hunger}, Happiness: {animal.happiness}, Energy: {animal.energy}")
+
 
 def check_if_all_animals_dead():
     global game_over
-    dead_animals = [animal for animal in zoo if animal.hunger <= 0]
+    dead_animals = [animal for animal in zoo if animal.is_dead()]
     if len(dead_animals) == len(zoo):
         print("All your animals are dead.. the zoo is eerily silent with visitor staring at your dead animals\n"
-              "GAME OVER!")
-        exit(666)
+              "--------------\n"
+              "| GAME OVER! |\n"
+              "--------------")
+        game_over = True
+        return
 
 
-def end_turn(day):
+def end_turn():
+    global day
     day +=1
-    print(f"Day: {day} at {zoo_name} is over. Yet another pointless day in a never ending stretch of days\n")
+    print("-----------------------------------------------------")
+    print(f"Day: {day} at {zoo_name} is over. Yet another pointless day in a never ending stretch of days")
+    print("-----------------------------------------------------")
+    input("Press the \"Any\" key to continue to the next day...\n")
     return day
 
 
@@ -172,44 +262,37 @@ def game_loop():
     while not game_over:
         day_start(zoo)
         zoo_personnel_interaction()
+        if game_over:
+            return
         visitor_interaction(zoo,visitors)
+        if game_over:
+            return
         animal_interaction(zoo)
         animal_status()
-        hunger_during_night(zoo)
+        during_night(zoo)
         animal_status()
         check_if_all_animals_dead()
-        day = end_turn(day)
+        if game_over:
+            return
+        end_turn()
         if day >= 10:
             game_over = True
+            print("-----------------------------------------------------")
             print(f"I've had it with these motherf***ing animals in this motherf***ing zoo!\n"
                   f"The narrator presses the self destruct button, destroying your zoo,\n"
                   f"obliterating all of your lovely animals you so deeply cared for!\n"
-                  f"GAME OVER!")
+                  f"--------------\n"
+                  f"| GAME OVER! |\n"
+                  "--------------")
 
 start_game()
-zoo_name = name_zoo(zoo_name)
+zoo_name = name_zoo()
 print(f"Your Zoo is named: {zoo_name}\nThis will stand forever! Or until you restart the game...")
 
-
+print("-----------------------------------------------------")
 print(f"Here are your starting animals:")
+print("-----------------------------------------------------")
 for animal in zoo:
-    print(f"Name: {animal.name}, Age: {animal.age}, hunger: {animal.hunger}, Happiness: {animal.happiness}, Energy: {animal.energy}")
+    print(f"Name: {animal.name}, Type: {animal.animal_type}, Age: {animal.age}, hunger: {animal.hunger}, Happiness: {animal.happiness}, Energy: {animal.energy}")
 
 game_loop()
-
-
-
-"""
-
-
-
-
-
-
-
-
-
-
-
-
-"""
