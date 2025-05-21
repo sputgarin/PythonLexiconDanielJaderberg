@@ -31,7 +31,6 @@ def name_zoo():
             print("That's not a valid name. Try something that contains actual characters or numbers.")
             print("-----------------------------------------------------")
 def start_game():
-    print("")
     print("-----------------------------------------------------")
     print(f"Welcome to the first day of ZooSimulator!\n"
           f"Choosing animal care as your profession was \"obviously\" the right career path for you!")
@@ -136,7 +135,7 @@ def visitor_interaction(zoo, visitors):
 
         visitor_choice = random.randint(0,3)
         animal = random.choice(alive_animals)
-        if visitor_choice == 0:
+        if visitor_choice == 0: # Feed animal.
             if animal.hunger < 100:
                 visitor.happiness += 10
                 animal.hunger = min(100, animal.hunger + 10)
@@ -145,51 +144,43 @@ def visitor_interaction(zoo, visitors):
 
             else:
                 print(f"{visitor.feed_animal(animal.name)}, The animal: {animal.name} is not hungry.")
-        elif visitor_choice == 1:
+        elif visitor_choice == 1: # Look at animal
             visitor.happiness += 10
             print(f"{visitor.look_at_animal(animal.name)}")
 
         elif visitor_choice == 2:
             if animal.animal_type == "Tiger" and percentage_chance(30):
-                print(f"{visitor.look_at_animal(animal.name)}")
+                print(f"{visitor.pet_animal(animal.name)}")
+                my_multi_line_str = r"""
+  ,\/~~~\_                            _/~~~~\
+  |  ---, `\_    ___,-------~~\__  /~' ,,''  |
+  | `~`, ',,\`-~~--_____    ---  - /, ,--/ '/'
+   `\_|\ _\`    ______,---~~~\  ,_   '\_/' /'
+     \,_|   , '~,/'~   /~\ ,_  `\_\ \_  \_\'
+     ,/   /' ,/' _,-'~~  `\  ~~\_ ,_  `\  `\
+   /@@ _/  /' ./',-                 \       `@,
+   @@ '   |  ___/  /'  /  \  \ '\__ _`~|, `, @@
+ /@@ /  | | ',___  |  |    `  | ,,---,  |  | `@@,
+ @@@ \  | | \ \O_`\ |        / / O_/' | \  \  @@@
+ @@@ |  | `| '   ~ / ,          ~     /  |    @@@
+ `@@ |   \ `\     ` |         | |  _/'  /'  | @@'
+  @@ |    ~\ /--'~  |       , |  \__   |    | |@@
+  @@, \     | ,,|   |       ,,|   | `\     /',@@
+  `@@, ~\   \ '     |       / /    `' '   / ,@@
+   @@@,    \    ~~\ `\/~---'~/' _ /'~~~~~~~~--,_
+    `@@@_,---::::::=  `-,| ,~  _=:::::''''''    `
+    ,/~~_---'_,-___     _-__  ' -~~~\_```---
+      ~`   ~~_/'// _,--~\_/ '~--, |\_
+           /' /'| `@@@@@,,,,,@@@@  | \
+                `     `@@@@@@'
+"""
+                print(my_multi_line_str)
+
                 print(f"The tiger {animal.name} just bit the hand off visitor: {visitor.name}\n"
                       f"You will never financially recover from this!")
                 print("--------------\n"
                       "| GAME OVER! |\n"
                       "--------------")
-                '''
-                                            .e@$$$$$$$eeeu=~=._
-                                         zd$$$$$$$$$$$$$$'   z$b..  _,x,
-                                      z????$$$$$$$$P",-==   dP""`$$$.  .;
-                                   .e"..     `"?$Fu^'e$$$$$be.   )$$' 4r'$$nn,     _. -
-                                 ud$$$P  zeeeu.   ld$$$$$$$$$$$$c`=._,$$  &lt;"$$$$= '
-                               z$$$$$$e ?$$"   "FE=e2R$$$$$$$$$$$$bu"h._..d. "`nMb`    _
-                            .-J$$$$$$$$,?$$b,.,J",xc3$$$$$$$$$$$$$$$" Mh. "  'MMMMP- ~
-                       ..ze$F R$$$$$$$$$bcccd$$"J(&lt;!i`"?$$$$$$$$$$$"i'MMP .-=^,xn'.T
-                 z$$$$$$$$$4.  ,ce$$$$$$$$$$$P'dMM `!!!i;,.`"""""`,i  MMx?xr?PTTT%'r
-                 $"..z .x"F"?$$$$$$$$$$$$$$$F.MMMMM.`!!''"!!!!!!! !! xMMMMMn PTM&gt;T-
-                 "b".nMMP'b.   "",c$$$$$$$$P.MMMMMMMb.&lt;       )!! &gt;'dMMMMMMM  __
-                  .HMMMM  "??$$$$$PF"uPF",, umnmnHMMMMMbx.... ''.n'MMMMMCund~    `~ ~ -
-                 'M'HMMMh         .e$ee$$?7 MMMMMT"",MMMMMMMMMMMMM.MMMMMMMMM
-                   MMMMMMMx -...e$$$P??,nMM "`,nndMMMMMMMMMMMMMMMMk`MMMMMMMP
-                  H"MMMMMMMMhx???",nHMMP",nh MMMMMM?MP"xHMMMMMMMMMF-?TMMMM"
-                    MMPTMMMMMMMMMMP"u- :n.`"%'MF.xnF.nMMMMMMMMMP".::::."Te
-                   'M".MPTMMMMMP"zeEeP.MMMMM"..4MF,HMMMMMMMMMF'.::::::::`R.
-                    " MF dMMMf z$$$$$ MMMF'xMMMr`HMMMMMMMMM".:::::::.::...?_
-                      T  M P  $$$$$$%dMF'dMMMM"xk'MPJMMMMP ::'.'';i!!!!'`^.xhMmx
-                        'M   4$$$$$P.P,HMMMMM,HMMh TMMMMM&gt; :!!!!!!!'`.xnMMMMMMMMMn
-                             J$$$$$ ",MMMMMM,MMMM'h TMMMML'!;!!!`.nHMMMMMMMMMMMMMMMn
-                             $$$$$P HMMMMMM,MMMM MMM."MMMM !i`.HMMMMMMMMMMMMMMMMMMMMr
-                             $$$$$"dMMMMMMMMMMMfdMMMM.`MMMh   xMMMMMMMMMMMMMMMMMMMMMMM
-                            4$$$$$ MMMMMMMMMMMMMMMMMMMx`MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM'
-                           ,4$$$$$.MMMMMMMMMMMMMMMMMMMMh TMMMMMMMMMMMMMMMMMMMMMMMMMMMf
-                          ; J$$$$F;MMMMMMMMMMMMMMMMMMMMMM."MMMMMMMMMMMMMMMMMMMMMMP""
-                        .db $$$$$ MMMMMMMMMMMMMMMMMMMMMMMMh."MMMMMMMMMMMMMMPF"
-                       , d$b$$$$$ MMMMMMMMMMMMMMMMMMMMMMMMMM u"?f""?=
-                      .  $$$$$$$$ MMMMMMMMMMMMMMMMMMMMMMMMMfJ$b
-                     z$  d$$$$$$$ MMMMMMMMMMMMMMMMMMMMMMMMM P" `
-                    e$$h ?$$$$$$$ MMMMMMMMMMMMMMMMMMMMMMMMf^  zF`.
-                '''
 
                 game_over = True
                 return
@@ -203,7 +194,7 @@ def visitor_interaction(zoo, visitors):
 
             else:
                 print(f"{visitor.pet_animal(animal.name)}, The animal: {animal.name} is not interested.")
-        elif visitor_choice == 3:
+        elif visitor_choice == 3: # Wander aimless
             print("The visitor aimlessly walks around contemplating life.")
 
 def animal_interaction(zoo):
@@ -296,3 +287,4 @@ for animal in zoo:
     print(f"Name: {animal.name}, Type: {animal.animal_type}, Age: {animal.age}, hunger: {animal.hunger}, Happiness: {animal.happiness}, Energy: {animal.energy}")
 
 game_loop()
+
