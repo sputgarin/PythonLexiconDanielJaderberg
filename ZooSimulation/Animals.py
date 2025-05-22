@@ -52,47 +52,63 @@ class Giraffe(Herbivore):
         super().__init__(name,age, hunger,happiness,energy=100)
         self.animal_type = "Giraffe"
     def make_sound(self):
-        return(f"Giraffe makes a Giraffe sound something like hmmmmm.")
+        return f"The {self.animal_type}: {self.name} makes a Giraffe sound something like hmmmmm."
 
     def eat(self):
-        return f"The Giraffe is eating the leaves your park attendants left on the ground"
+        return f"The {self.animal_type}: {self.name} is eating the leaves your park attendants left on the ground"
     def sleep(self):
-        return f"The Giraffe is sleeping"
+        return f"The {self.animal_type}: {self.name} is sleeping"
 
 class Antilope(Herbivore):
     def __init__(self,name, age, hunger, happiness):
         super().__init__(name,age, hunger,happiness,energy=100)
         self.animal_type = "Antilope"
     def make_sound(self):
-        return(f"Antilope makes a  sound!\n")
+        return(f"The {self.animal_type}: {self.name} makes a  sound!\n")
 
     def eat(self):
-        return f"The Antilope is eating the leaves your park attendants left on the ground"
+        return f"The {self.animal_type}: {self.name} is eating the leaves your park attendants left on the ground"
     def sleep(self):
-        return f"The Antilope is sleeping"
+        return f"The {self.animal_type}: {self.name} is sleeping"
 
 class Lion(Carnivore):
     def __init__(self,name, age, hunger, happiness):
         super().__init__(name,age, hunger,happiness,energy=100)
         self.animal_type = "Lion"
     def make_sound(self):
-        return(f"The lion roars magestically, making small children cry")
+        return(f"The {self.animal_type}: {self.name} roars magestically, making small children cry")
 
     def eat(self):
-        return f"The lion is eating the carcass of a more insignificant animal.\nCircle of life and all that."
+        return f"The {self.animal_type}: {self.name} is eating the carcass of a more insignificant animal.\nCircle of life and all that."
 
     def sleep(self):
-        return f"The lion is sleeping"
+        return f"The {self.animal_type}: {self.name} is sleeping"
 
 class Tiger(Carnivore):
     def __init__(self,name, age, hunger, happiness):
         super().__init__(name,age, hunger,happiness,energy=100)
         self.animal_type = "Tiger"
     def make_sound(self):
-        return(f"The tiger roars magestically, making small children cry")
+        return(f"The {self.animal_type}: {self.name} roars magestically, making small children cry")
 
     def eat(self):
-        return f"The Tiger is eating the carcass of a more insignificant animal.\nCircle of life and all that."
+        return (f"The {self.animal_type}: {self.name} is eating the carcass of a more insignificant animal.\n"
+                f"Circle of life and all that.")
 
     def sleep(self):
-        return f"The Tiger is sleeping"
+        return f"The {self.animal_type}: {self.name} is sleeping"
+
+class Penguin(Carnivore):
+    def __init__(self,name, age, hunger, happiness):
+        super().__init__(name,age, hunger,happiness,energy=100)
+        self.animal_type = "Penguin"
+    def make_sound(self):
+        return f"The {self.animal_type}: {self.name} swim around looking lonely"
+
+    def eat(self):
+        return f"The {self.animal_type}: {self.name} is eating fish."
+
+    def sleep(self):
+        return f"The {self.animal_type}: {self.name} is sleeping"
+
+

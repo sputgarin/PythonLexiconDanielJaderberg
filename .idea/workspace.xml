@@ -7,6 +7,7 @@
     <list default="true" id="6780737a-e1e8-4b35-91e6-2529ac3a6c74" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ZooSimulation/Animals.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZooSimulation/Animals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZooSimulation/Visitors.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZooSimulation/Visitors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ZooSimulation/ZooMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZooSimulation/ZooMain.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,32 +34,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Animals.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Lesson3TeacherLabs.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ZooMain.executor&quot;: &quot;Run&quot;,
-    &quot;Python.classes.executor&quot;: &quot;Run&quot;,
-    &quot;Python.formatter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.intropython.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lab2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lab3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lab4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lab5.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lab6.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lesson3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lesson4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lesson5.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lesson6.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lesson7.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lesson7lab.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lesson7teachercode.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Animals.executor": "Run",
+    "Python.Lesson3TeacherLabs.executor": "Run",
+    "Python.ZooMain.executor": "Run",
+    "Python.classes.executor": "Run",
+    "Python.formatter.executor": "Run",
+    "Python.intropython.executor": "Run",
+    "Python.lab2.executor": "Run",
+    "Python.lab3.executor": "Run",
+    "Python.lab4.executor": "Run",
+    "Python.lab5.executor": "Run",
+    "Python.lab6.executor": "Run",
+    "Python.lesson3.executor": "Run",
+    "Python.lesson4.executor": "Run",
+    "Python.lesson5.executor": "Run",
+    "Python.lesson6.executor": "Run",
+    "Python.lesson7.executor": "Run",
+    "Python.lesson7lab.executor": "Run",
+    "Python.lesson7teachercode.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

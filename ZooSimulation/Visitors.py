@@ -14,3 +14,7 @@ class Visitors:
     def look_at_animal(self,other):
         return f"{self.name} looked at {other}"
 
+    def adjust_happiness(self, amount):
+        self.happiness = max(0, min(100, self.happiness + amount))
+
+
