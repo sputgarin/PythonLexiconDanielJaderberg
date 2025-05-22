@@ -1,5 +1,5 @@
 import Animals
-import Visitors
+from Visitors import Visitors
 import random
 from enum import Enum
 
@@ -22,15 +22,15 @@ zoo_name = ""
 
 
 visitor_pool = [
-    Visitors.Visitors("Pelle", 9, 50),
-    Visitors.Visitors("Linda", 33,20),
-    Visitors.Visitors("Olle", 55,60),
-    Visitors.Visitors("CyklonCrawX", 999,0),
-    Visitors.Visitors("Rutger", 12,70),
-    Visitors.Visitors("Märta", 75,35),
-    Visitors.Visitors("Rut", 66,100),
-    Visitors.Visitors("Kurt", 44,25),
-    Visitors.Visitors("Mizuki", 29,44)
+    Visitors("Pelle", 9, 50),
+    Visitors("Linda", 33,20),
+    Visitors("Olle", 55,60),
+    Visitors("CyklonCrawX", 999,0),
+    Visitors("Rutger", 12,70),
+    Visitors("Märta", 75,35),
+    Visitors("Rut", 66,100),
+    Visitors("Kurt", 44,25),
+    Visitors("Mizuki", 29,44)
 ]
 
 def select_daily_visitors():
@@ -92,6 +92,7 @@ def day_start(zoo):
     visitor_status(visitors)
 
 def daily_comment():
+    global zoo
     if day == 2:
         print("So how is this life of monotonous animal care treating you? Are you bored yet?")
     if day == 3:
@@ -172,15 +173,15 @@ def visitor_interaction(zoo, visitors):
     print("-----------------------------------------------------")
     print(f"The visitors interacts with your animals:")
     print("-----------------------------------------------------")
-    # Make my visitors do one interaction each
-    for visitor in visitors: # add a choice for each visitor
-        alive_animals = [animal for animal in zoo if not animal.is_dead()]
-        if not alive_animals:
-            print("All animals are dead. The visitors just stare blankly at empty cages.")
-            return
 
-        visitor_choice = VisitorAction(random.randint(0,3))
+    alive_animals = [animal for animal in zoo if not animal.is_dead()]
+    if not alive_animals:
+        print("All animals are dead. The visitors just stare blankly at empty cages.")
+        return
+
+    for visitor in visitors:
         animal = random.choice(alive_animals)
+        visitor_choice = VisitorAction(random.randint(0,3))
         if visitor_choice == VisitorAction.FEED:
             if animal.energy <= 10:
                 print(f"{animal.name} is to tired to be fed by {visitor.name}")
@@ -308,7 +309,7 @@ def end_turn():
 
 def visitor_status(visitors):
     print("-----------------------------------------------------")
-    print(f"Here are todays visitors:")
+    print(f"Today's visitors:")
     print("-----------------------------------------------------")
     for visitor in visitors:
         print(f"Name: {visitor.name}, Age: {visitor.age}, Happiness: {visitor.happiness}")
@@ -347,6 +348,8 @@ def game_loop():
         if day >= 10:
             game_over = True
             print("-----------------------------------------------------")
+            print(f"It's the start of day: {day}")
+            print("-----------------------------------------------------")
             print(f"I've had it with these motherf***ing animals in this motherf***ing zoo!\n"
                   f"The narrator presses the self destruct button, destroying your zoo,\n"
                   f"obliterating all of your lovely animals you so deeply cared for!\n"
@@ -361,8 +364,5 @@ game_loop()
 Ideas:
 5. Also check on the animals energy level, if it is low the visitors can't play or interact with them as a compliment to
 the random sleep system if implemented. 
-6. Add a random to the pet system that makes the visitor more happy when petting the animal. DONE
-7. Make code more readable using enums if they exist in python. 
-Especially for the part where the user can feed, pet, look at, wander. They right now only have comments DONE
-8. display visitor happiness. DONE
+
 """

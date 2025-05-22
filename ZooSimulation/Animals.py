@@ -11,6 +11,7 @@ class Animals:
         self.happiness = happiness
         self.energy = energy
         self.dead = False
+        self.clamp_stats()
 
     def clamp_stats(self):
         self.hunger = max(0, min(100,self.hunger))

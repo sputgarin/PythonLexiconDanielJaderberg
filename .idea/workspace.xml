@@ -7,7 +7,6 @@
     <list default="true" id="6780737a-e1e8-4b35-91e6-2529ac3a6c74" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ZooSimulation/Animals.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZooSimulation/Animals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZooSimulation/Visitors.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZooSimulation/Visitors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ZooSimulation/ZooMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZooSimulation/ZooMain.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
