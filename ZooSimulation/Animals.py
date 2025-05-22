@@ -12,7 +12,10 @@ class Animals:
         self.energy = energy
         self.dead = False
 
-
+    def clamp_stats(self):
+        self.hunger = max(0, min(100,self.hunger))
+        self.energy = max(0, min(100,self.energy))
+        self.happiness = max(0, min(100,self.happiness))
     def make_sound(self):
         return f"The animal makes an audible sound."
 
