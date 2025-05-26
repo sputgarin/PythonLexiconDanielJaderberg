@@ -1,3 +1,4 @@
+# By Daniel Jäderberg
 import Animals
 from Visitors import Visitors
 import random
@@ -360,9 +361,3 @@ def game_loop():
 start_game()
 game_loop()
 
-"""
-Ideas:
-5. Also check on the animals energy level, if it is low the visitors can't play or interact with them as a compliment to
-the random sleep system if implemented. 
-
-"""
