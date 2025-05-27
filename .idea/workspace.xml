@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6780737a-e1e8-4b35-91e6-2529ac3a6c74" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/Connected/hello.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/Connected/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/Connected/todo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/borders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/colors.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/fruits.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/headings.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/hello.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/nested.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/paragraphs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/receipt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/todo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Lab1/welcome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/day1TeacherExample.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/fontendHTMLpart2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZooSimulation/ZooMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZooSimulation/ZooMain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontendHTML.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontendHTML.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -34,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "Python.Animals.executor": "Run",
     "Python.Lesson3TeacherLabs.executor": "Run",
     "Python.ZooMain.executor": "Run",
@@ -58,6 +76,11 @@
     "git-widget-placeholder": "master"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\PythonLexiconDanielJaderberg\Fundementals" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
